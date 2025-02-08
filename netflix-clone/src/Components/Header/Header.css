@@ -1,0 +1,91 @@
+.header_outer_container {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #0c0c0c; /* Default black */
+    height: 10vh;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 100;
+}
+
+/* Transparent background when hovered */
+.header_outer_container:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+}
+
+/* Header container */
+.header_container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left section styling */
+.header_left {
+    flex: 1; /* Takes all available space on the left */
+}
+
+.header_left ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Push everything to the left */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px; /* Add spacing between items */
+}
+
+/* Style each list item */
+.header_left ul li {
+    font-size: 1rem;
+    color: rgb(197, 190, 190);
+    cursor: pointer;
+}
+
+/* Netflix logo */
+.netflix_logo {
+    width: 100px;
+    height: auto;
+}
+
+/* Right section styling */
+.header_right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Push icons to the far right */
+    flex: 1; /* Takes all available space on the right */
+}
+
+.header_right ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px; /* Add spacing between icons */
+}
+
+.header_right ul li {
+     color: rgb(197, 190, 190);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.header_left ul li:hover {
+    color: rgb(255, 255, 255);
+}
+
+.header_right ul li:hover {
+    color: rgb(255, 255, 255);
+}
+
+/* Ensure the body scrolls through the header */
+body {
+    height: 200vh; /* Makes sure the page is long enough to scroll */
+    overflow-x: hidden;
+}
