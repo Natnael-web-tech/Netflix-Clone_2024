@@ -14,10 +14,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* font-size: medium; */
 }
 
 
 
 body {
     background-color: rgb(7, 7, 7);
+    font-family: var(--font-second-base);
+
 }

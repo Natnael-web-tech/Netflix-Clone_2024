@@ -1,18 +1,18 @@
 .banner {
     margin-top: 0vh;
     height: 80vh;
-    margin-bottom: 60px;
+    margin-bottom: -40px;
     color: white;
     object-fit: contain;
 }
 
 .banner_contents {
     margin-left: 30px;
-    padding-top: 300px;
+    padding-top: 100px;
 }
 
 .banner_title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 800;
     padding-bottom: 0.3rem;
 }
@@ -24,6 +24,7 @@
     font-size: 1rem;
     max-width: 360px;
     height: 80px;
+    font-weight: 400;
 }
 
 .banner_button {
@@ -33,7 +34,7 @@
     margin-right: 2rem;
     outline: none;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     border-radius: 0.2vw;
 }
