@@ -34,5 +34,6 @@ transform: scale(1.09);
 }
 
 .row h1{
-    font-size: large;
+    
+    margin-left: 10px;
 }

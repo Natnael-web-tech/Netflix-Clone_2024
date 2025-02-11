@@ -1,7 +1,7 @@
 .banner {
     margin-top: 0vh;
-    height: 80vh;
-    margin-bottom: -40px;
+    height: 70vh;
+    margin-bottom: -60px;
     color: white;
     object-fit: contain;
 }
@@ -55,7 +55,7 @@
     background-image: linear-gradient(
         180deg,
         transparent,
-        rgb(37,37,37, 0.91),
+        rgb(37,37,37, 0.1),
         #111
     );
 }
