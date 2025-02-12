@@ -61,7 +61,7 @@
     );
 }
 
-/* Responsive additions (media queries only) */
+
 @media (max-width: 1024px) {
     .banner {
         height: 60vh;
