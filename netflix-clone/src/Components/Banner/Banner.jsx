@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "../../Utils/axios";
 import requests from "../../Utils/requests";
-import "./Banner.css";
+import styles from "./Banner.module.css";
 import movieTrailer from "movie-trailer";
 import YouTube from "react-youtube";
 
@@ -10,12 +10,15 @@ const Banner = () => {
   const [trailerUrl, setTrailerUrl] = useState("");
 
   useEffect(() => {
+      
     async function fetchData() {
+      try {
       const response = await axios.get(requests.fetchNetflixOriginals);
       const results = response.data.results;
-      setMovie(results[Math.floor(Math.random() * results.length)]); // Pick a random movie
-    }
-    fetchData();
+      setMovie(results[Math.floor(Math.random() * results.length)]); 
+    } catch (error) {console.log(error)}
+  
+  } fetchData();
   }, []);
 
   function truncate(str, n) {
@@ -44,35 +47,35 @@ const Banner = () => {
   return (
     <>
       <div
-        className="banner"
+        className={styles.banner}
         style={{
-          backgroundSize: "cover",
           backgroundImage: `url("https://image.tmdb.org/t/p/original${movie?.backdrop_path}")`,
           backgroundPosition: "center center",
+          backgroundSize: "cover",
         }}
       >
-        <div className="banner_contents">
-          <h1 className="banner_title">
+        <div className={styles.banner_contents}>
+          <h1 className={styles.banner_title}>
             {movie?.title || movie?.name || movie?.original_name}
           </h1>
-          <div className="banner_buttons">
+          <div className={styles.banner_buttons}>
             <button
-              className="banner_button play"
+              className={`${styles.banner_button} ${styles.play}`}
               onClick={() => handleClick(movie)}
             >
               Play
             </button>
-            <button className="banner_button">My List</button>
+            <button className={styles.banner_button}>My List</button>
           </div>
-          <h1 className="banner_description">
+          <h1 className={styles.banner_description}>
             {truncate(movie?.overview, 150)}
           </h1>
         </div>
-        <div className="banner_fadeBottom"></div>
+        <div className={styles.banner_fadeBottom}></div>
       </div>
 
       {trailerUrl && (
-        <div className="video_container">
+        <div className={styles.video_container}>
           <YouTube videoId={trailerUrl} opts={opts} />
         </div>
       )}

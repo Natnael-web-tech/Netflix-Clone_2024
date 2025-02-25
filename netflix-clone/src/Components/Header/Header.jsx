@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./Header.css";
+import styles from "./Header.module.css";
 import NetflixLogo from "../../assets/Images/netflix-3.svg";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import MenuIcon from "@mui/icons-material/Menu"; // Hamburger icon
+import MenuIcon from "@mui/icons-material/Menu"; 
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,16 +15,16 @@ const Header = () => {
   };
 
   return (
-    <div className="header_outer_container">
-      <div className="header_container">
-        <div className="header_left">
-          <div className="menu-toggle" onClick={toggleMenu}>
+    <div className={styles.header_outer_container}>
+      <div className={styles.header_container}>
+        <div className={styles.header_left}>
+          <div className={styles.menu_toggle} onClick={toggleMenu}>
             <MenuIcon />
           </div>
-          <ul className={menuOpen ? "menu-active" : ""}>
+          <ul className={`${menuOpen ? styles.menu_active : ""}`}>
             <li>
               <img
-                className="netflix_logo"
+                className={styles.netflix_logo}
                 src={NetflixLogo}
                 alt="Netflix Logo"
               />
@@ -38,7 +38,7 @@ const Header = () => {
             <li>Browse by Languages</li>
           </ul>
         </div>
-        <div className="header_right">
+        <div className={styles.header_right}>
           <ul>
             <li>
               <SearchIcon />

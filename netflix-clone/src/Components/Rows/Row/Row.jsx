@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import "./Row.css";
+import styles from "./Row.module.css";
 import axios from "../../../Utils/axios";
 import movieTrailer from 'movie-trailer';
 import YouTube from 'react-youtube';
@@ -49,15 +49,15 @@ const opts = {
 }
 
   return (
-    <div className='row'>
+    <div className={styles.row}>
       <h1>{title}</h1>
 
-      <div className='row_posters'> 
+      <div className={styles.row_posters}> 
         {movies?.map((movie,index)=> (
             <img 
             onClick={() => handleClick(movie)}
             key = {index} src = {`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} 
-             alt={movie.name} className={`row_poster ${isLargeRow && "row_posterLarge"}`} />
+             alt={movie.name} className={`${styles.row_poster} ${isLargeRow && styles.row_posterLarge}`} />
         ))}
       </div>
       <div style = {{padding: '40px'}}>  

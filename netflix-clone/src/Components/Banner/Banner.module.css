@@ -1,10 +1,10 @@
 
 .banner {
-    margin-top: 0vh;
     height: 70vh;
     margin-bottom: -40px;
     color: white;
     object-fit: contain;
+    
 }
 
 .banner_contents {
@@ -38,6 +38,7 @@
     font-size: 1rem;
     font-weight: 700;
     border-radius: 0.2vw;
+    cursor: pointer;
 }
 
 .play {
